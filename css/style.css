@@ -1,0 +1,463 @@
+* {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+.container {
+    /* max width khi man hinh nho tranh xuat hien thanh ngang */
+    max-width: 1280px;
+    /* the block va width chua full 1 dong thi mowi xai margin auto */
+    margin: 0 auto;
+    /* cai padding de tranh man hinh nho se bi sat le */
+    padding: 0 15px;
+}
+
+.header {
+    border-bottom: 1px solid white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header .logo {
+    color: white;
+    font-size: 35px;
+    font-size: 700;
+}
+
+.header .nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+
+.header .nav a:hover {
+    color: #e62b4a;
+}
+
+/* flexbox: cac the con don len 1 hang */
+.header .container {
+    display: flex;
+    /* doi chieu cua flex: flex-direction :row/ row-reverse
+    colum/colum-reverse */
+    flex-direction: row;
+    /* justify-content:center/flex-end/space-between/space-around ; */
+    justify-content: space-between;
+    /* align-items theo truc phu justify-content theo truc chinh 
+    + center/flex-start: don len dau/flex-end don cuoi*/
+    align-items: center;
+    height: 80px;
+}
+
+.header .navbar-toggler {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    display: none;
+}
+
+/* carousel */
+.carousel {
+    background-image: url(../img/home_slider.jpg);
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.carousel .container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.carousel span {
+    font-size: 30px;
+}
+
+.carousel h1 {
+    font-size: 70px;
+    margin: 10px 0;
+}
+
+.carousel a {
+    background-color: #e62b4a;
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.carousel i {
+    font-size: 30px;
+}
+
+/* service */
+.service {
+    background-color: black;
+    padding: 30px 0;
+    color: white;
+}
+
+.service .title {
+    text-align: center;
+    /* line-height: 50px; */
+}
+
+.service .title span {
+    color: #e62b4a;
+    font-size: 13px;
+
+}
+
+.service .title h1 {
+    font-size: 35px;
+}
+
+.service .title p {
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+.service_content .slick_slider .item {
+    height: 240px;
+    background-color: white;
+    color: gray;
+    text-align: center;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.service_content .slick_slider .item i {
+    font-size: 50px;
+}
+
+.service_content .slick_slider .item p {
+    font-size: 20px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: red;
+    font-size: 15px;
+}
+
+.slick-dots li button:before {
+    color: #eeeeee;
+    font-size: 15px;
+}
+
+.slick_slider .item:after {
+    content: "";
+    width: 5px;
+    height: 0;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 1s;
+
+
+}
+
+.slick_slider .item:hover:after {
+    height: 100%;
+
+
+}
+
+.service .title p {
+    color: grey;
+    margin-top: 20px;
+}
+
+/* portfolio */
+.portfolio {
+    padding: 80px 0;
+}
+
+.portfolio .title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.portfolio .main .row {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.portfolio .main .row .col {
+    width: calc(100%/3);
+    padding: 0px 15px;
+    margin-bottom: 30px;
+}
+
+.portfolio .main .item {
+    position: relative;
+}
+
+.portfolio .main .item img {
+    width: 100%;
+    /* giam mau giam bong */
+    filter: grayscale(100%) contrast(50%);
+    display: block;
+
+}
+
+.portfolio .main .item .info {
+    background-color: rgba(230, 43, 74, 0.6);
+    /* k dung relative vi k di chuyen dc dien tich, kho di chuyen */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    padding: 20px;
+}
+
+.portfolio .main .item .info {
+    transition: 1s;
+}
+
+.portfolio .main .item .info .action {
+    transform: translateY(20px);
+    transition: 1s;
+}
+
+.portfolio .main .item .info .detail {
+    transform: translateY(20px);
+    transition: 1s;
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+}
+
+.portfolio .main .item:hover .info .action {
+    transform: translateY(0);
+}
+
+.portfolio .main .item:hover .info .detail {
+    transform: translateY(0);
+}
+
+.portfolio .main .item:hover .info {
+    opacity: 1;
+    display: block;
+}
+
+.portfolio .main .item .info .action {
+    text-align: right;
+}
+
+.portfolio .main .item .info .action i {
+    color: black;
+    background-color: #ffffff;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    /* cho chuot hinh ban tay */
+    cursor: pointer;
+
+}
+
+.portfolio .main .item .info .action i:hover {
+    color: white;
+    background-color: black;
+}
+
+.portfolio .main .item .info .detail {
+    color: white;
+
+}
+
+/* post */
+/* css grid layout, k can load va flex */
+.post {
+    padding: 80px 0;
+    background-color: #f3f3f3;
+}
+
+.post .title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.post .main .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: ; de diu chinh chieu cao cua dong */
+    /* gap: 30px;
+    gap colum gap row */
+}
+
+
+.post .main .item img {
+    width: 100%;
+    display: block;
+    filter: grayscale(30%) contrast(50%);
+    transition: 1s;
+}
+
+.post .main .item img:hover {
+    filter: grayscale(0) contrast(100%);
+}
+
+.post .main .item-1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.post .main .item-8 {
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 2;
+}
+
+/* statistic */
+.statistic {
+    background-color: black;
+    padding: 50px 0;
+    color: white;
+    font-size: 40px;
+
+}
+
+.statistic_content {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* experience */
+.experience {
+    padding: 80px 0;
+    background-image: url(../img/bussiness_img_1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.experience .title {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.experience .main video {
+    width: 100%;
+}
+
+/* contact */
+.contact {
+    padding: 80px 0;
+}
+
+.contact .title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact .main .row {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    column-gap: 20px;
+}
+
+.contact .main .col-left iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+
+.contact .main .col-right form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.contact .main .col-right form input,
+.contact .main .col-right form textarea {
+    width: 100%;
+    padding: 10px;
+
+    font-size: 15px;
+}
+
+.contact .main .col-right form button {
+    background-color: black;
+    color: white;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 10px;
+}
+
+.contact .main .col-right form button:hover {
+    background-color: #e62b4a;
+}
+
+@media screen and (max-width:576px) {
+    .header .nav {
+        display: none;
+    }
+
+    .header .navbar-toggler {
+        display: block;
+    }
+
+    .portfolio .main .row .col {
+        width: 100%;
+
+    }
+
+    .post .main .row {
+        display: block;
+    }
+
+    .contact .main .row {
+        display: block;
+    }
+}
+
+@media screen and (max-width:768px) {}
+
+.backtotop {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-color: gray;
+    font-weight: bold;
+    font-size: 20px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+}
+.cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cd-top--fade-out {
+    opacity: 1;
+}
